@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery Task</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    #animatedDiv {
+      width: 100px;
+      height: 100px;
+      background-color: #2b124c;
+      margin: 20px auto;
+      transition: background-color 0.5s;
+    }
+    #list{
+      list-style-type: none;
+    }#paragraph{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>jQuery Task</h2>
+    <p id="paragraph">This is a paragraph.</p>
+    <button id="append">Append Text</button>
+    <ul id="list">
+      <li>Item 1</li>
+      <li>Item 2</li>
+      
+    </ul>
+    <button id="animate">Animate Div</button>
+    <div id="animatedDiv"></div>
+  </div>
+
+  <script>
+    $(document).ready(function () {
+      // Appends content at the end of the paragraph and list
+      $("#append").click(function () {
+        $("#paragraph").append(" Appended text!");
+        $("#list").append("<li>New Item</li>");
+      });
+
+      // Animate the div and change its color
+      $("#animate").click(function () {
+        $("#animatedDiv")
+          .animate({ width: "150px", height: "150px" }, 500)
+          .animate({ width: "100px", height: "100px" }, 500, function () {
+            $(this).css("background-color", "#522858");
+          });
+      });
+    });
+  </script>
+</body>
+</html>

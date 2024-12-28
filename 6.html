@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basic Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+    .calculator {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    input {
+      width: 100px;
+      padding: 10px;
+      font-size: 18px;
+      margin: 5px;
+      text-align: center;
+    }
+    select, button {
+      padding: 10px;
+      margin: 5px;
+      font-size: 18px;
+    }.title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;  
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+
+    
+<div class="calculator">
+    <div class="title">Calculator</div>
+  <input type="number" id="num1" placeholder="Number 1">
+  <input type="number" id="num2" placeholder="Number 2">
+  
+  <select id="operation">
+    <option value="+">Sum</option>
+    <option value="-">Difference</option>
+    <option value="*">Product</option>
+    <option value="/">Quotient</option>
+    <option value="%">Remainder</option>
+    <option value="**">Power</option>
+    <option value="sqrt">Square Root</option>
+    <option value="square">Square</option>
+  </select>
+  
+  <button onclick="calculate()">Calculate</button>
+  
+  <div id="result"></div>
+</div>
+
+<script>
+  function calculate() {
+    const num1 = parseFloat(document.getElementById('num1').value);
+    const num2 = parseFloat(document.getElementById('num2').value);
+    const operation = document.getElementById('operation').value;
+    let result;
+
+    if (isNaN(num1) || isNaN(num2)) {
+      document.getElementById('result').innerText = 'Please enter valid numbers';
+      return;
+    }
+
+    switch (operation) {
+      case '+':
+        result = num1 + num2;
+        break;
+      case '-':
+        result = num1 - num2;
+        break;
+      case '*':
+        result = num1 * num2;
+        break;
+      case '/':
+        result = num1 / num2;
+        break;
+      case '%':
+        result = num1 % num2;
+        break;
+      case '**':
+        result = Math.pow(num1, num2);
+        break;
+      case 'sqrt':
+        result = Math.sqrt(num1);
+        break;
+      case 'square':
+        result = Math.pow(num1, 2);
+        break;
+      default:
+        result = 'Invalid operation';
+    }
+
+    document.getElementById('result').innerText = 'Result: ' + result;
+  }
+</script>
+
+</body>
+</html>

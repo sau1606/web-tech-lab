@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Newspaper Layout</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #2B124C;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    footer {
+      background-color: #2B124C;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
+
+    section {
+      display: flex;
+      margin: 20px;
+    }
+
+    article {
+      flex: 3;
+      background-color: #fff;
+      margin-right: 20px;
+      padding: 15px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    aside {
+      flex: 1;
+      background-color: #E8D0F1;
+      padding: 15px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th, td {
+      padding: 10px;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+
+    th {
+      background-color: #190019;
+      color: white;
+    }
+
+    figure {
+      background-color: #DFB6B2;
+      padding: 10px;
+      text-align: center;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    h2 {
+      color: #522858;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Newspaper Headline</h1>
+    <p>Your Daily News Update</p>
+  </header>
+
+  <section>
+    <article>
+      <h2>Latest News Article</h2>
+      <p>This is the main content of the article. It contains important news and information.</p>
+
+      <figure>
+        <img src="https://via.placeholder.com/600x400" alt="Sample Image">
+        <figcaption>Image Caption</figcaption>
+      </figure>
+
+      <table>
+        <caption>Important Stats</caption>
+        <thead>
+          <tr>
+            <th>Stat</th>
+            <th>Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Visitors</td>
+            <td>1,234</td>
+          </tr>
+          <tr>
+            <td>Subscribers</td>
+            <td>567</td>
+          </tr>
+        </tbody>
+      </table>
+    </article>
+
+    <aside>
+      <h3>Side Notes</h3>
+      <p>This is an aside section for additional information or advertisements.</p>
+    </aside>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Newspaper Inc. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Table</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .lab {
+            background-color: #ffcccb;
+        }
+
+        .elective {
+            background-color: #d1e7dd;
+        }
+
+        footer {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Class Time Table</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Time/Day</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Example of rowspan: Maths class that spans two rows -->
+            <tr>
+                <td rowspan="2">8:00 AM - 9:00 AM</td> <!-- Rowspan for Maths -->
+                <td class="lab">Maths</td>
+                <td>Physics</td>
+                <td class="lab">Chemistry</td>
+                <td>Computer Science</td>
+                <td class="elective">Elective 1</td>
+            </tr>
+            <tr>
+                <td class="lab">Maths</td> <!-- Same class, second row -->
+                <td>Physics</td>
+                <td class="lab">Chemistry</td>
+                <td>Computer Science</td>
+                <td class="elective">Elective 1</td>
+            </tr>
+            <!-- Example of colspan: Elective that spans two columns -->
+            <tr>
+                <td>9:00 AM - 10:00 AM</td>
+                <td colspan="2" class="elective">Elective 2</td> <!-- Colspan for Elective 2 -->
+                <td class="lab">Lab - Physics</td>
+                <td>Maths</td>
+            </tr>
+            <tr>
+                <td>10:00 AM - 11:00 AM</td>
+                <td>Elective 3</td>
+                <td class="lab">Lab - Physics</td>
+                <td>Maths</td>
+                <td class="elective">Elective 3</td>
+                <td class="lab">Lab - Computer Science</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <footer>
+        <p>Class Time Table - 2024</p>
+    </footer>
+
+</body>
+</html>

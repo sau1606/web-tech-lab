@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax and JSON Methods</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        button {
+            margin: 10px 5px;
+            padding: 8px 15px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #content {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Ajax and JSON Methods</h2>
+    <button onclick="loadTextWithoutJQuery()">Load Text (No jQuery)</button>
+    <button onclick="loadTextWithJQuery()">Load Text (jQuery)</button>
+    <button onclick="loadJSON()">Load JSON (getJSON)</button>
+    <button onclick="parseJSON()">Parse JSON</button>
+    <div id="content">Results will appear here...</div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        // Method a: AJAX without jQuery
+        function loadTextWithoutJQuery() {
+            const xhr = new XMLHttpRequest();
+            xhr.open("GET", "example.txt", true);
+            xhr.onload = () => {
+                if (xhr.status === 200) {
+                    document.getElementById("content").innerText = xhr.responseText;
+                } else {
+                    document.getElementById("content").innerText = "Error loading text!";
+                }
+            };
+            xhr.send();
+        }
+
+        // Method b: AJAX with jQuery
+        function loadTextWithJQuery() {
+            $.ajax({
+                url: "example.txt",
+                method: "GET",
+                success: (data) => {
+                    $("#content").text(data);
+                },
+                error: () => {
+                    $("#content").text("Error loading text!");
+                }
+            });
+        }
+
+        // Method c: getJSON
+        function loadJSON() {
+            $.getJSON("data.json", (data) => {
+                $("#content").html(`Name: ${data.name}, Age: ${data.age}`);
+            }).fail(() => {
+                $("#content").text("Error loading JSON!");
+            });
+        }
+
+        // Method d: parseJSON
+        function parseJSON() {
+            const jsonString = '{"name": "Jane Doe", "age": 30}';
+            const data = $.parseJSON(jsonString);
+            $("#content").html(`Name: ${data.name}, Age: ${data.age}`);
+        }
+    </script>
+</body>
+</html>
